@@ -1,0 +1,23 @@
+// database
+datasource db {
+  provider = "sqlite"
+  url      = "file:database.db"
+}
+
+// generator
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+}
+
+// data models
+model Product {
+  id        Int     @id @default(autoincrement())
+  name          String
+  description   String?
+  price     Int     @default(0)
+  sku Int   @default(0)
+  image         String?
+  quantity      Int     @default(0)
+  created_at  String?
+}
